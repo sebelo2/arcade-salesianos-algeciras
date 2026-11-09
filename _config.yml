@@ -1,0 +1,16 @@
+# Configuración de la web. Cambia solo el título y la descripción.
+title: "Proyecto Arcade"
+description: "Una máquina recreativa con tres juegos retro sobre ciberseguridad, construida por el alumnado de Digitalización de 4º ESO de Salesianos Algeciras."
+lang: es
+
+# No toques nada a partir de aquí.
+markdown: kramdown
+kramdown:
+  input: GFM
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: "default"
+exclude:
+  - README.md
