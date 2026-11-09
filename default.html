@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="{{ site.lang }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% if page.title and page.portada != true %}{{ page.title }} · {% endif %}{{ site.title }}</title>
+  <meta name="description" content="{{ page.description | default: site.description }}">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ '/assets/css/estilo.css' | relative_url }}">
+</head>
+<body>
+  <!-- ESTE ARCHIVO ES EL ESQUELETO DE TODAS LAS PÁGINAS. NO LO TOQUÉIS. -->
+  <header class="cabecera">
+    <div class="cabecera-in">
+      <a class="marca" href="{{ '/' | relative_url }}">
+        <span class="marca-titulo">{{ site.title }}</span>
+        <span class="marca-centro">Salesianos Algeciras · Digitalización 4º ESO</span>
+      </a>
+      <nav class="menu">
+        {% for item in site.data.menu %}
+        <a href="{{ item.url | relative_url }}"{% if page.url == item.url %} class="activo"{% endif %}>{{ item.titulo }}</a>
+        {% endfor %}
+      </nav>
+    </div>
+  </header>
+
+  {% if page.portada %}
+  <section class="portada">
+    <div class="portada-in">
+      <p class="antetitulo">Insert coin</p>
+      <h1>{{ site.title }}</h1>
+      <p class="lema">{{ page.lema }}</p>
+      <p class="pulsa">Pulsa START</p>
+    </div>
+  </section>
+  {% endif %}
+
+  <main class="contenido">
+    {% if page.title and page.portada != true %}
+    {% if page.amenaza %}<p class="antetitulo-rojo">Amenaza: {{ page.amenaza }}</p>{% endif %}
+    <h1>{{ page.title }}</h1>
+    {% endif %}
+    {{ content }}
+  </main>
+
+  <footer class="pie">
+    <div class="pie-in">
+      <p>{{ site.title }} · Digitalización 4º ESO · Salesianos Algeciras</p>
+      <p>Contenidos con licencia <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.es">CC BY-SA 4.0</a> · <a href="{{ '/creditos.html' | relative_url }}">Créditos y licencias</a></p>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,13 @@
+# Menú de la web. Cada entrada: el texto que se ve y la página a la que lleva.
+- titulo: Inicio
+  url: /
+- titulo: El proyecto
+  url: /proyecto.html
+- titulo: Los juegos
+  url: /juegos.html
+- titulo: La máquina
+  url: /maquina.html
+- titulo: E-waste
+  url: /ewaste.html
+- titulo: Equipo
+  url: /equipo.html
